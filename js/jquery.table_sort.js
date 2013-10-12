@@ -40,15 +40,13 @@ jquery.table_sort.js v0.0.1 - Copyright 2013, i2bskn
     return State;
   })();
 
-  $.fn.tableSort = function(params, custom){
-    if (typeof custom !== 'function'){
-      custom = function(){};
-    };
-
+  $.fn.tableSort = function(params){
     var defaults = {
       indexes: $(this).find("thead").find("th").map(function(){
         return $(this).index();
       }).get(),
+      compare: function(){},
+      after: function(){},
     };
 
     var settings = $.extend(defaults, params);
@@ -65,7 +63,7 @@ jquery.table_sort.js v0.0.1 - Copyright 2013, i2bskn
           _b *= 1;
           return _a - _b;
         case "custom":
-          return custom(_a, _b);
+          return settings.compare(_a, _b);
         default:
           if (_a < _b) {
             return -1;
@@ -118,6 +116,7 @@ jquery.table_sort.js v0.0.1 - Copyright 2013, i2bskn
 
       state.updateOrder(index);
       refreshClass($target);
+      settings.after();
     };
 
     $target.find("thead").find("th").each(function(){

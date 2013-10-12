@@ -31,7 +31,15 @@
 &lt;!--
 $(function(){
   $("table").tableSort({
-    indexes: [0,1],
+    indexes: [0, 1, 3],
+    compare: function(a, b){
+      a = a.replace("%", "") * 1;
+      b = b.replace("%", "") * 1;
+      return a - b;
+    },
+    after: function(){
+      alert("changed!");
+    },
   });
 });
 //--&gt;
@@ -59,6 +67,7 @@ $(function(){
             <th data-type="integer">id</th>
             <th>Name</th>
             <th>Language</th>
+            <th data-type="custom">Ratio</th>
           </tr>
         </thead>
 
@@ -67,21 +76,25 @@ $(function(){
             <td>8</td>
             <td>a</td>
             <td>english</td>
+            <td>20%</td>
           </tr>
           <tr>
             <td>2</td>
             <td>g</td>
             <td>japanese</td>
+            <td>5%</td>
           </tr>
           <tr>
             <td>5</td>
             <td>e</td>
             <td>spanish</td>
+            <td>14%</td>
           </tr>
           <tr>
             <td>3</td>
             <td>b</td>
             <td>german</td>
+            <td>9%</td>
           </tr>
         </tbody>
       </table>
