@@ -1,5 +1,5 @@
 /*
-jquery.table_sort.js v0.0.1 - Copyright 2013, i2bskn
+jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
 */
 (function($){
   var State = (function(){
