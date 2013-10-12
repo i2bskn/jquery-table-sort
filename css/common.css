@@ -1,0 +1,25 @@
+h2 {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.jumbotron {
+  background-color: transparent;
+  text-align: center;
+}
+
+.sort_column_default:after {
+  content: url(img/bg.gif);
+}
+
+.sort_column_asc:after {
+  content: url(img/asc.gif);
+}
+
+.sort_column_desc:after {
+  content: url(img/desc.gif);
+}

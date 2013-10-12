@@ -1,67 +1,106 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>jquery.table_sort.js</title>
-<style>
-.sort_column_default:after {
-  content: url(img/bg.gif);
-}
-
-.sort_column_asc:after {
-  content: url(img/asc.gif);
-}
-
-.sort_column_desc:after {
-  content: url(img/desc.gif);
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="jquery.table_sort.js table_sort.js table_sort i2bskn">
+  <meta name="description" content="jquery.table_sort.js demo by i2bskn">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
 </head>
 
 <body>
-<table class="sort">
-  <thead>
-    <tr>
-      <th data-type="integer">id</th>
-      <th>Name</th>
-      <th>Language</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr>
-      <td>8</td>
-      <td>a</td>
-      <td>english</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>g</td>
-      <td>japanese</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>e</td>
-      <td>spanish</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>b</td>
-      <td>german</td>
-    </tr>
-  </tbody>
-</table>
+<header class="container">
+  <div class="jumbotron">
+    <h1>jquery.table_sort.js</h1>
+    <p>Table sort plugin for jQuery.</p>
+  </div>
+</header>
 
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="js/jquery.table_sort.js"></script>
-<script>
-<!--
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <legend>Usage</legend>
+
+      <pre class="pre-scrollable">
+&lt;script src="//code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.table_sort.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+&lt;!--
 $(function(){
-  $(".sort").tableSort({
-    indexes: [0, 1],
+  $("table").tableSort({
+    indexes: [0,1],
   });
 });
-//-->
-</script>
+//--&gt;
+&lt;/script&gt;
+      </pre>
+
+      <legend>Links</legend>
+
+      <ul class="list-unstyled">
+        <li>
+          <a href="https://github.com/i2bskn/jquery.table_sort.js/releases">Downloads</a>
+        </li>
+        <li>
+          <a href="https://github.com/i2bskn/jquery.table_sort.js">View on GitHub</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <legend>Demo</legend>
+
+      <table class="table sort">
+        <thead>
+          <tr>
+            <th data-type="integer">id</th>
+            <th>Name</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>8</td>
+            <td>a</td>
+            <td>english</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>g</td>
+            <td>japanese</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>e</td>
+            <td>spanish</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>b</td>
+            <td>german</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<footer class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <hr>
+      <span id="copyright">Copyright &copy; 2013 <a href="http://i2bskn.com">i2bskn</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.table_sort.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>
