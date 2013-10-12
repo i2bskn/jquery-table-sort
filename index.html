@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery.table_sort.js</title>
+<style>
+.sort_column_default:after {
+  content: url(/img/bg.gif);
+}
+
+.sort_column_asc:after {
+  content: url(/img/asc.gif);
+}
+
+.sort_column_desc:after {
+  content: url(/img/desc.gif);
+}
+</style>
+</head>
+
+<body>
+<table class="sort">
+  <thead>
+    <tr>
+      <th data-type="integer">id</th>
+      <th>Name</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>8</td>
+      <td>a</td>
+      <td>english</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>g</td>
+      <td>japanese</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>e</td>
+      <td>spanish</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>b</td>
+      <td>german</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/js/jquery.table_sort.js"></script>
+<script>
+<!--
+$(function(){
+  $(".sort").tableSort({
+    indexes: [0, 1],
+  });
+});
+//-->
+</script>
+</body>
+</html>
