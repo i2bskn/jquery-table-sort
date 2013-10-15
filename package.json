@@ -1,0 +1,10 @@
+{
+  "name": "jquery.table_sort.js",
+  "version": "0.0.2",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
