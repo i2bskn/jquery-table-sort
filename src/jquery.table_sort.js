@@ -7,7 +7,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
       this.index = null;
       this.order = 1;
       this.indexes = indexes;
-    };
+    }
 
     State.prototype = {
       getOrder: function(index){
@@ -15,7 +15,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
           return this.order;
         } else {
           return 1;
-        };
+        }
       },
       updateOrder: function(index){
         if (this.index === index) {
@@ -23,7 +23,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
         } else {
           this.index = index;
           this.order = -1;
-        };
+        }
       },
       getIndex: function(){
         return this.index;
@@ -33,7 +33,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
           return true;
         } else {
           return false;
-        };
+        }
       },
     };
 
@@ -58,20 +58,20 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
       var _b = $(b).find("td").eq(index).text();
 
       switch (type){
-        case "integer":
-          _a *= 1;
-          _b *= 1;
-          return _a - _b;
-        case "custom":
-          return settings.compare(_a, _b);
-        default:
-          if (_a < _b) {
-            return -1;
-          } else if (_a > _b) {
-            return 1;
-          };
-          return 0;
-      };
+      case "integer":
+        _a *= 1;
+        _b *= 1;
+        return _a - _b;
+      case "custom":
+        return settings.compare(_a, _b);
+      default:
+        if (_a < _b) {
+          return -1;
+        } else if (_a > _b) {
+          return 1;
+        }
+        return 0;
+      }
     };
 
     var removeClass = function(target){
@@ -88,10 +88,10 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
           $(target).addClass("sort_column_asc");
         } else {
           $(target).addClass("sort_column_desc");
-        };
+        }
       } else {
         $(target).addClass("sort_column_default");
-      };
+      }
     };
 
     var refreshClass = function(target){
@@ -99,7 +99,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
         if (state.indexCheck($(this).index())){
           removeClass(this);
           addClass(this);
-        };
+        }
       });
     };
 
@@ -122,7 +122,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
     $target.find("thead").find("th").each(function(){
       if (state.indexCheck($(this).index())){
         $(this).on("click", sort);
-      };
+      }
     });
     refreshClass($target);
 
