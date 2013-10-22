@@ -7,16 +7,16 @@
         "sort",
         "move"
     ],
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": {
         "name": "i2bskn",
         "url": "http://i2bskn.com"
     },
     "maintainers": [
         {
-            "name": "Corey Frang",
-            "email": "gnarf37@gmail.com",
-            "url": "http://gnarf.net"
+            "name": "i2bskn",
+            "email": "i2bskn@gmail.com",
+            "url": "http://i2bskn.com"
         }
     ],
     "licenses": [
