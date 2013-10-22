@@ -6,8 +6,17 @@ $(function(){
       b = b.replace("%", "") * 1;
       return a - b;
     },
-    after: function(){
-      alert("changed!");
+    after: function(th){
+      $("div#log").append($("<p>", {text: $(th).text() + " sorted!"}));
+      $(".sort").tableMove({
+        after: function(tr){
+          $("div#log").append($("<p>", {text: $(tr).find("td").eq(1).text() + " moved!"}));
+        },
+      });
+    },
+  }).tableMove({
+    after: function(tr){
+      $("div#log").append($("<p>", {text: $(tr).find("td").eq(1).text() + " moved!"}));
     },
   });
 });

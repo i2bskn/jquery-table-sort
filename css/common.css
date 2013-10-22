@@ -24,3 +24,7 @@ footer {
 .sort_column_desc:after {
   content: url(img/desc.gif);
 }
+
+.sort_column_asc, .sort_column_desc {
+  background-color: #AFEEEE;
+}

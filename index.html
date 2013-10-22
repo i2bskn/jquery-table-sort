@@ -26,25 +26,20 @@
 
       <pre class="pre-scrollable">
 &lt;script src="//code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
-&lt;script src="js/jquery.table_sort.min.js"&gt;&lt;/script&gt;
+&lt;script src="/js/jquery.table_sort.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 &lt;!--
 $(function(){
-  $("table").tableSort({
-    indexes: [0, 1, 3],
-    compare: function(a, b){
-      a = a.replace("%", "") * 1;
-      b = b.replace("%", "") * 1;
-      return a - b;
-    },
-    after: function(){
-      alert("changed!");
-    },
-  });
+  // Sortable
+  $(".sort").tableSort();
+
+  // Movable
+  $(".sort").tableMove();
 });
 //--&gt;
-&lt;/script&gt;
-      </pre>
+&lt;/script&gt;</pre>
+
+      <p>See the <a href="https://github.com/i2bskn/jquery-table-sort/blob/master/README.md" target="_blank">README</a> in the GitHub for how to use.</p>
 
       <legend>Links</legend>
 
@@ -61,13 +56,14 @@ $(function(){
     <div class="col-md-6">
       <legend>Demo</legend>
 
-      <table class="table sort">
+      <table class="table table-striped table-hover table-condensed table-condensed sort">
         <thead>
           <tr>
             <th data-type="integer">id</th>
             <th>Name</th>
             <th>Language</th>
             <th data-type="custom">Ratio</th>
+            <th></th>
           </tr>
         </thead>
 
@@ -77,27 +73,45 @@ $(function(){
             <td>a</td>
             <td>english</td>
             <td>20%</td>
+            <td>
+              <a class="btn btn-default btn-xs up" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span></a>
+              <a class="btn btn-default btn-xs down" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span></a>
+            </td>
           </tr>
           <tr>
             <td>2</td>
             <td>g</td>
             <td>japanese</td>
             <td>5%</td>
+            <td>
+              <a class="btn btn-default btn-xs up" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span></a>
+              <a class="btn btn-default btn-xs down" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span></a>
+            </td>
           </tr>
           <tr>
             <td>5</td>
             <td>e</td>
             <td>spanish</td>
             <td>14%</td>
+            <td>
+              <a class="btn btn-default btn-xs up" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span></a>
+              <a class="btn btn-default btn-xs down" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span></a>
+            </td>
           </tr>
           <tr>
             <td>3</td>
             <td>b</td>
             <td>german</td>
             <td>9%</td>
+            <td>
+              <a class="btn btn-default btn-xs up" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span></a>
+              <a class="btn btn-default btn-xs down" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span></a>
+            </td>
           </tr>
         </tbody>
       </table>
+
+      <div id="log"></div>
     </div>
   </div>
 </div>
