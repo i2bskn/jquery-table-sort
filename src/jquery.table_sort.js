@@ -116,7 +116,7 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
 
       state.updateOrder(index);
       refreshClass($target);
-      settings.after();
+      settings.after(this);
     };
 
     $target.find("thead").find("th").each(function(){
@@ -125,6 +125,35 @@ jquery.table_sort.js v0.0.2 - Copyright 2013, i2bskn
       }
     });
     refreshClass($target);
+
+    return this;
+  };
+
+  $.fn.tableMove = function(params){
+    var defaults = {
+      after: function(){},
+    };
+
+    var settings = $.extend(defaults, params);
+
+    var moveUp = function(){
+      var $row = $(this).closest("tr");
+      if ($row.prev("tr").length){
+        $row.insertBefore($row.prev("tr"));
+        settings.after($row);
+      }
+    };
+
+    var moveDown = function(){
+      var $row = $(this).closest("tr");
+      if ($row.next("tr").length){
+        $row.insertAfter($row.next("tr"));
+        settings.after($row);
+      }
+    };
+
+    $(this).find("tbody>tr").find(".up").on("click", moveUp);
+    $(this).find("tbody>tr").find(".down").on("click", moveDown);
 
     return this;
   };
