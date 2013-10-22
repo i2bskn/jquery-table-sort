@@ -12,6 +12,9 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'lib/jquery.table_sort.min.js': ['<%= concat.dist.dest %>']
+        },
+        options: {
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> */'
         }
       }
     },
