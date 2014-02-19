@@ -62,6 +62,15 @@ jquery.table_sort.js v0.1.1 - Copyright 2013, i2bskn
         _a *= 1;
         _b *= 1;
         return _a - _b;
+      case "date":
+        var _date_a = new Date(_a).getTime();
+        var _date_b = new Date(_b).getTime();
+        if (_date_a < _date_b) {
+            return -1;
+        } else if (_date_a > _date_b) {
+            return 1;
+        }
+        return 0;
       case "custom":
         return settings.compare(_a, _b);
       default:
