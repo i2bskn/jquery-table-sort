@@ -1,5 +1,5 @@
 /*
-jquery.table_sort.js v0.1.1 - Copyright 2013, i2bskn
+jquery.table_sort.js v0.1.2 - Copyright 2013, i2bskn
 */
 (function($){
   var State = (function(){
@@ -66,9 +66,9 @@ jquery.table_sort.js v0.1.1 - Copyright 2013, i2bskn
         var _date_a = new Date(_a).getTime();
         var _date_b = new Date(_b).getTime();
         if (_date_a < _date_b) {
-            return -1;
+          return -1;
         } else if (_date_a > _date_b) {
-            return 1;
+          return 1;
         }
         return 0;
       case "custom":
