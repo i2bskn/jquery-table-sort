@@ -1,4 +1,4 @@
-Copyright (c) 2013 i2bskn
+Copyright (c) 2013-2015 i2bskn
 
 MIT License
 

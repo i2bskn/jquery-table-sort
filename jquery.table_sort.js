@@ -1,7 +1,19 @@
-/*
-jquery.table_sort.js v0.1.2 - Copyright 2013, i2bskn
+/*!
+ * jquery.table_sort.js
+ * Table sort plugin for jQuery.
+ *
+ * @version v0.1.2
+ * @author i2bskn
+ * @license MIT
+ * @url http://i2bskn.github.io/jquery-table-sort/
 */
-(function($){
+;(function(factory) {
+  if (typeof module === "object" && typeof module.exports === "object") {
+    module.exports = factory(require("jquery"), window, document);
+  } else {
+    factory(jQuery, window, document);
+  }
+}(function($, window, document, undefined) {
   var State = (function(){
     function State(indexes){
       this.index = null;
@@ -166,4 +178,5 @@ jquery.table_sort.js v0.1.2 - Copyright 2013, i2bskn
 
     return this;
   };
-})(jQuery);
+}));
+
