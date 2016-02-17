@@ -96,22 +96,21 @@
     };
 
     var removeClass = function(target){
-      $(target).removeClass("sort_column_default");
-      $(target).removeClass("sort_column_asc");
-      $(target).removeClass("sort_column_desc");
+      $(target).removeClass("sort_column_default sort_column_asc sort_column_desc");
     };
 
     var addClass = function(target){
-      var index = $(target).index();
+      var $inner = $(target);
+      var index = $inner.index();
 
       if (state.getIndex() === index){
         if (state.getOrder(index) === -1){
-          $(target).addClass("sort_column_asc");
+          $inner.addClass("sort_column_asc");
         } else {
-          $(target).addClass("sort_column_desc");
+          $inner.addClass("sort_column_desc");
         }
       } else {
-        $(target).addClass("sort_column_default");
+        $inner.addClass("sort_column_default");
       }
     };
 
@@ -179,4 +178,3 @@
     return this;
   };
 }));
-
